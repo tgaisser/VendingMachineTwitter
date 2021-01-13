@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6D00ED1-28FA-4E20-B1E9-F58FBFE11742}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VendingMachine.Repository</RootNamespace>
+    <AssemblyName>VendingMachine.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckForDatabase.cs" />
+    <Compile Include="CodeRepository.cs" />
+    <Compile Include="MachineTwitterAccountRepository.cs" />
+    <Compile Include="Migrations\201308291902350_InitialMigration.cs" />
+    <Compile Include="Migrations\201308291902350_InitialMigration.Designer.cs">
+      <DependentUpon>201308291902350_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309031912351_Added code reply message to Account Table.cs" />
+    <Compile Include="Migrations\201309031912351_Added code reply message to Account Table.Designer.cs">
+      <DependentUpon>201309031912351_Added code reply message to Account Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309241959427_Adding Random Responses.cs" />
+    <Compile Include="Migrations\201309241959427_Adding Random Responses.Designer.cs">
+      <DependentUpon>201309241959427_Adding Random Responses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311221937322_StepOneAddTwitterAccountLogins.cs" />
+    <Compile Include="Migrations\201311221937322_StepOneAddTwitterAccountLogins.Designer.cs">
+      <DependentUpon>201311221937322_StepOneAddTwitterAccountLogins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311222059385_Step2SeperateTwitterAccountFromMachines.cs" />
+    <Compile Include="Migrations\201311222059385_Step2SeperateTwitterAccountFromMachines.Designer.cs">
+      <DependentUpon>201311222059385_Step2SeperateTwitterAccountFromMachines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311222143569_STEPOneSeperateMachineFromAccount.cs" />
+    <Compile Include="Migrations\201311222143569_STEPOneSeperateMachineFromAccount.Designer.cs">
+      <DependentUpon>201311222143569_STEPOneSeperateMachineFromAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311222235048_StepTwoSeperateMachineFromAccount.cs" />
+    <Compile Include="Migrations\201311222235048_StepTwoSeperateMachineFromAccount.Designer.cs">
+      <DependentUpon>201311222235048_StepTwoSeperateMachineFromAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Misc.cs" />
+    <Compile Include="TwitterAccountRepository.cs" />
+    <Compile Include="TwitterUserRepository.cs" />
+    <Compile Include="VendingMachineContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VendingMachine.Model\VendingMachine.Model.csproj">
+      <Project>{14ce7cb3-dc1e-4d57-9098-c0fffff65a8e}</Project>
+      <Name>VendingMachine.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201308291902350_InitialMigration.resx">
+      <DependentUpon>201308291902350_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309031912351_Added code reply message to Account Table.resx">
+      <DependentUpon>201309031912351_Added code reply message to Account Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309241959427_Adding Random Responses.resx">
+      <DependentUpon>201309241959427_Adding Random Responses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311221937322_StepOneAddTwitterAccountLogins.resx">
+      <DependentUpon>201311221937322_StepOneAddTwitterAccountLogins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311222059385_Step2SeperateTwitterAccountFromMachines.resx">
+      <DependentUpon>201311222059385_Step2SeperateTwitterAccountFromMachines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311222143569_STEPOneSeperateMachineFromAccount.resx">
+      <DependentUpon>201311222143569_STEPOneSeperateMachineFromAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311222235048_StepTwoSeperateMachineFromAccount.resx">
+      <DependentUpon>201311222235048_StepTwoSeperateMachineFromAccount.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SeedCodes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SeedCodes1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SeedCodes2.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SeedEvent.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SeedMachine.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SeedOther1.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
